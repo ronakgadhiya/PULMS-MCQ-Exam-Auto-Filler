@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "PU Prompt Exam Auto Filler",
+  "version": "2.0.0",
+  "description": "Fills the Parul University eLearning Single Choice question editor from the 80-question Prompt Engineering Excel dataset.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://elearning.paruluniversity.ac.in/*"],
+  "action": { "default_popup": "popup.html" },
+  "content_scripts": [{
+    "matches": ["https://elearning.paruluniversity.ac.in/exams/*"],
+    "js": ["questions.js", "content.js"],
+    "run_at": "document_idle"
+  }]
+}
